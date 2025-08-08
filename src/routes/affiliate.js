@@ -4,7 +4,6 @@ import { getSpecialCommission, setCommission } from "../handlers/commissionHandl
 import { getDoctorsAndProducts } from "../handlers/dataHendlers.js";
 import { getSpecialCoupons, setSpecialCoupon } from "../handlers/couponsHandlers.js";
 import { getPaymentsHistory, getPendingPayments } from "../handlers/paymentHandlers.js";
-import doctorDb from "../database/models/doctor.model.js";
 
 const router = express.Router();
 
@@ -63,9 +62,5 @@ router.post("/doctorsandproducts", async (req, res) => {
   res.send(data);
 });
 
-router.get("/test", async (req, res) => {
-  const data = await doctorDb.find();
-  res.send(data);
-});
 
 export default router;
