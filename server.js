@@ -7,7 +7,7 @@ import affiliateRoutes from "./src/routes/affiliate.js";
 import customizationRoutes from "./src/routes/customization.js";
 import { requestLogger } from "./src/utils/middleware.js";
 import serverless from "serverless-http";
-import e from "express";
+
 
 const app = express();
 
@@ -24,4 +24,3 @@ app.use("/api/customization", customizationRoutes);
 
 
 export default serverless(app);
-
