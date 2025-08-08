@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: amrutam backend
+    env: node
+    build:
+      command: npm install
+    start:
+      command: node server.js
+    port: 3000
