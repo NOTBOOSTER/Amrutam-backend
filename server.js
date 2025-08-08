@@ -2,11 +2,11 @@ import cors from "cors";
 import helmet from "helmet";
 import express from "express";
 import connectDB from "./src/database/mongo.js";
-import { url, port, nodeEnv } from "./src/utils/loadEnv.js";
+import { url, port } from "./src/utils/loadEnv.js";
 import affiliateRoutes from "./src/routes/affiliate.js";
 import customizationRoutes from "./src/routes/customization.js";
 import { requestLogger } from "./src/utils/middleware.js";
-import serverless from "serverless-http";
+import ServerlessHttp from "serverless-http";
 
 
 const app = express();
@@ -22,5 +22,12 @@ await connectDB();
 app.use("/api/affiliate", affiliateRoutes);
 app.use("/api/customization", customizationRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 
-export default serverless(app);
+export default ServerlessHttp(app);
+// app.listen(port, () => {
+//   console.log(`Server is running on port ${port}`);
+//   console.log(`Server is running on url http://${url}:${port}`);
+// });
