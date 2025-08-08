@@ -22,12 +22,9 @@ await connectDB();
 app.use("/api/affiliate", affiliateRoutes);
 app.use("/api/customization", customizationRoutes);
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on url http://${url}:${port}`);
 });
 
-export default ServerlessHttp(app);
-// app.listen(port, () => {
-//   console.log(`Server is running on port ${port}`);
-//   console.log(`Server is running on url http://${url}:${port}`);
-// });
+export default app
