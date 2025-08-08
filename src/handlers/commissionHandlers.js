@@ -1,4 +1,4 @@
-import specialCommissionDb from "../database/models/SpecialCommission.model.js";
+import specialCommissionDb from "../database/models/specialCommission.model.js";
 
 const getSpecialCommission = async (skipto) => {
   const specialcommission = await specialCommissionDb.aggregate([

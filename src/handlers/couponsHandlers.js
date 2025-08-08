@@ -1,4 +1,4 @@
-import specialCouponDb from "../database/models/SpecialCoupons.model.js";
+import specialCouponDb from "../database/models/specialCoupons.model.js";
 
 const getSpecialCoupons = async (skipto) => {
   const specialcoupon = await specialCouponDb.aggregate([
