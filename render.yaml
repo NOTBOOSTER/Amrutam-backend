@@ -1,9 +1,8 @@
 services:
-  - type: web
-    name: amrutam backend
-    env: node
-    build:
-      command: npm install
-    start:
-      command: node server.js
-    port: 3000
+  - type: web # Defines this as a web service
+    name: my-node-app # A unique name for your service, will be part of the URL
+    env: node # Specifies the Node.js runtime environment
+    branch: main # The branch to deploy from (e.g., main, master)
+    buildCommand: npm install && npm run build # Command to install dependencies and build your app (adjust if using yarn or other build processes)
+    startCommand: npm run start
+    numInstances: 1 # (Optional) Number of instances to run (for scaling)
